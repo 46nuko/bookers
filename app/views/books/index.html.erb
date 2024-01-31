@@ -11,31 +11,38 @@
      <td><%= book.title %></td>
      <td><%= book.body %></td>
      <td>
-       <%= link_to "Show", book_path(book.id) %>
-       <%= link_to "Edit", edit_book_path(book.id) %>
-       <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+       <%= link_to "Show", book_path(book.id),class:"link-spacing" %>
+       <%= link_to "Edit", edit_book_path(book.id),class:"link-spacing" %>
+       <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?",class:"link-spacing" %>
      </td>
   </tr>
 <% end %>
 </table>
 <h2>New book</h2>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
+<div class="error-messages">
+  <% if @book.errors.any? %>
+    <div class="error-box">
+      <p class="error-title"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+      <ul class="error-list">
+        <% @book.errors.full_messages.each do |message| %>
+          <li class="error-message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <div class="field">
     <h5>Title</h5>
-    <%= f.text_field :title %>
+    <div class= "form">
+      <%= f.text_field :title %>
+    </div>
   </div>
   <div class="field">
     <h5>Body</h5>
-    <%= f.text_area :body %>
+    <div class= "form">
+      <%= f.text_area :body %>
+    </div>
   </div>
   <div class="action">
     <%= f.submit 'Create Book' %>
