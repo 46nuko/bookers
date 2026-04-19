@@ -8,3 +8,88 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+table {
+  border-collapse: separate;
+  box-sizing: border-box;
+  border-spacing: 2px;
+}
+
+thead {
+  vertical-align: middle;
+}
+
+tbody {
+  vertical-align: middle;
+}
+
+th {
+  padding-bottom: 5px;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a {
+  color: #000;
+}
+
+p {
+  margin: 33px;
+  line-height: 18px;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin: 0.83em 0;
+  font-weight: bold;
+  }
+
+.field{
+    margin-bottom: 10px;
+  }
+
+label {
+  display: block;
+}
+
+.error-message{
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+.notice {
+  color: green;
+}
